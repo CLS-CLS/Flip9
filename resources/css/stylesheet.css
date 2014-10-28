@@ -1,0 +1,100 @@
+/*
+Below are some notes on how the css classes are used in the game. Changing their attributes it will 
+change the game's UI. Feel free to experiment
+  
+A number is made from an HBox and a Text node. The Text is child of HBox.
+The HBox has the class      card-default
+The Text has the classes 1) card-text-side-up (used when the card is side-up)
+						 2) card-text-side-down (..)
+						 3) card-text-active (used on the predefined card that will be swapped).
+The screen also contains a region as a background. The region has the style class "background"
+
+Finally there is a common class for the buttons 'buttonClass' and each button has also
+its own classes,  new-game-button and solve-button - the names are self explanatory.
+
+Unfortunately some effects are not supported in CSS file. The glowing effect that is used when a card is active, is hard-coded inside
+the java code and will take effect no matter the changes in the css.
+*/
+
+.card-default {
+	-fx-effect: dropshadow(one-pass-box, black, 30, 0, 10, 20);
+}
+
+.card-text-side-up {
+	-fx-fill: linear-gradient(BROWN, WHITE);
+	-fx-font-size: 100px;
+	-fx-font-weight: BOLD;
+	-fx-stroke-type: outside;
+	-fx-stroke-width: 3;
+	-fx-stroke: linear-gradient(WHITE, BROWN);
+	-fx-blend-mode: hard-light;
+}
+
+.card-text-side-down {
+	-fx-fill: linear-gradient(cyan, dodgerblue);
+	-fx-font-size: 100px;
+	-fx-font-weight: BOLD;
+	-fx-stroke-type: outside;
+	-fx-stroke-width: 3;
+	-fx-stroke: linear-gradient(dodgerblue, cyan);
+	-fx-blend-mode: hard-light;
+}
+
+.card-text-active {
+	-fx-stroke: ORANGE;
+	-fx-effect: dropshadow(one-pass-box, palegoldenrod, 20, 0.1, 0, 0)
+}
+
+.card-text-side-up:hover {
+	-fx-opacity: 0.8
+}
+
+.card-text-side-down:hover {
+	-fx-opacity: 0.8
+}
+
+
+.background {
+	-fx-background-color: DARKSLATEGREY;
+}
+
+/* taken from http://fxexperience.com/2011/12/styling-fx-buttons-with-css/ */
+.buttonClass {
+	-fx-background-color: linear-gradient(#686868 0%, #232723 25%, #373837 75%, #757575 100%),
+		linear-gradient(#020b02, #3a3a3a),
+		linear-gradient(#b9b9b9 0%, #c2c2c2 20%, #afafaf 80%, #c8c8c8 100%),
+		linear-gradient(#f5f5f5 0%, #dbdbdb 50%, #cacaca 51%, #d7d7d7 100%);
+	-fx-background-insets: 0, 1, 4, 5;
+	-fx-background-radius: 9, 8, 5, 4;
+	-fx-padding: 15 30 15 30;
+	-fx-font-family: "Helvetica";
+	-fx-font-size: 18px;
+	-fx-font-weight: bold;
+	-fx-text-fill: #333333;
+}
+
+.buttonClass:pressed {
+	-fx-background-color: linear-gradient(#f5f5f5 0%, #dbdbdb 50%, #cacaca 51%, #d7d7d7 100%),
+		linear-gradient(#020b02, #3a3a3a),
+		linear-gradient(#686868 0%, #232723 25%, #373837 75%, #757575 100%),
+		linear-gradient(#b9b9b9 0%, #c2c2c2 20%, #afafaf 80%, #c8c8c8 100%);
+}
+
+.buttonClass:selected {
+	-fx-background-color: linear-gradient(#f5f5f5 0%, #dbdbdb 50%, #cacaca 51%, #d7d7d7 100%),
+		linear-gradient(#020b02, #3a3a3a),
+		linear-gradient(#686868 0%, #232723 25%, #373837 75%, #757575 100%),
+		linear-gradient(#b9b9b9 0%, #c2c2c2 20%, #afafaf 80%, #c8c8c8 100%);
+}
+
+.buttonClass:hover {
+	-fx-effect: dropshadow( one-pass-box , rgba(255,255,255,0.5) , 0, 0.0 , 0 , 1)
+}
+
+#new-game-button {
+	
+}
+
+#solve-button {
+	
+}
