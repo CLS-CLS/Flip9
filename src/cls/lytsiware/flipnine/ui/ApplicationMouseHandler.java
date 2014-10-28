@@ -68,7 +68,6 @@ public class ApplicationMouseHandler implements EventHandler<Event> {
 			}
 			if (isWin(extended)) {
 				app.fxAnimate.queue(new WinAnimation(app.cards));
-				app.undoManager.clear();
 			}
 		}
 	}
